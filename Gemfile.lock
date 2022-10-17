@@ -178,6 +178,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    slack-notifier (2.4.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -230,6 +231,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   selenium-webdriver
+  slack-notifier (~> 2.4)
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails

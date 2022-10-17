@@ -27,6 +27,14 @@ class EmployeesController < ApplicationController
       if @employee.save
         format.html { redirect_to employee_url(@employee), notice: "Employee was successfully created." }
         format.json { render :show, status: :created, location: @employee }
+
+        notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
+          defaults channel: "geral",
+                   username: "Employer App"
+        end
+        
+        notifier.ping "Hello default"
+
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @employee.errors, status: :unprocessable_entity }
