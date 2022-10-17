@@ -1,0 +1,37 @@
+<%= form_with(model: employee) do |form| %>
+  <% if employee.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+        <% employee.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :emp_name, style: "display: block" %>
+    <%= form.text_field :emp_name %>
+  </div>
+
+  <div>
+    <%= form.label :emp_email, style: "display: block" %>
+    <%= form.text_field :emp_email %>
+  </div>
+
+  <div>
+    <%= form.label :emp_job, style: "display: block" %>
+    <%= form.text_field :emp_job %>
+  </div>
+
+  <div>
+    <%= form.label :emp_salary, style: "display: block" %>
+    <%= form.text_field :emp_salary %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
