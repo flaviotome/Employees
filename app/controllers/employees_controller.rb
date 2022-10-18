@@ -38,14 +38,14 @@ class EmployeesController < ApplicationController
         #end
         
        # notifier.ping "Teste"
-       require 'slack-messenger'
+       #require 'slack-messenger'
 
-       messenger = Slack::Messenger.new "https://hooks.slack.com/services/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" do
-        defaults channel: "#geral",
+       messenger = Slack::Messenger.new "https://hooks.slack.com/services/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" do
+        defaults channel: "geral",
                  username: "messenger"
       end
       
-      messenger.ping "Hello default"
+      messenger.ping "agora vai"
       
 
       else
