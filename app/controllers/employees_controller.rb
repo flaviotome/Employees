@@ -40,12 +40,12 @@ class EmployeesController < ApplicationController
        # notifier.ping "Teste"
        #require 'slack-messenger'
 
-       messenger = Slack::Messenger.new "https://hooks.slack.com/services/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" do
-        defaults channel: "geral",
-                 username: "messenger"
-      end
+     #  messenger = Slack::Messenger.new "https://hooks.slack.com/services/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" do
+     #   defaults channel: "geral",
+     #            username: "messenger"
+     # end
       
-      messenger.ping "Novo funcionário cadastrado: Nome: "+ @employee.emp_name+" Cargo: "+@employee.emp_job
+     # messenger.ping "Novo funcionário cadastrado: Nome: "+ @employee.emp_name+" Cargo: "+@employee.emp_job
       
 
       else
@@ -70,11 +70,11 @@ class EmployeesController < ApplicationController
 
   # DELETE /employees/1 or /employees/1.json
   def destroy
-    messenger = Slack::Messenger.new "https://hooks.slack.com/services/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" do
-      defaults channel: "geral",
-               username: "messenger"
-    end
-    messenger.ping "Funcionário excluído: Nome: "+ @employee.emp_name+" Cargo: "+@employee.emp_job
+    #messenger = Slack::Messenger.new "https://hooks.slack.com/services/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" do
+    #  defaults channel: "geral",
+    #           username: "messenger"
+    #end
+    #messenger.ping "Funcionário excluído: Nome: "+ @employee.emp_name+" Cargo: "+@employee.emp_job
     @employee.destroy
 
     respond_to do |format|
