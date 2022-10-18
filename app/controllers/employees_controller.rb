@@ -29,7 +29,7 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       if @employee.save
-        format.html { redirect_to employee_url(@employee), notice: "Employee was successfully created." }
+        format.html { redirect_to employee_url(@employee), notice: "Funcionário cadastrado!" }
         format.json { render :show, status: :created, location: @employee }
 
         #notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
@@ -45,7 +45,7 @@ class EmployeesController < ApplicationController
                  username: "messenger"
       end
       
-      messenger.ping "agora vai"
+      messenger.ping "Novo funcionário cadastrado: Nome: "+ @employee.emp_name+" Cargo: "+@employee.emp_job
       
 
       else
@@ -59,7 +59,7 @@ class EmployeesController < ApplicationController
   def update
     respond_to do |format|
       if @employee.update(employee_params)
-        format.html { redirect_to employee_url(@employee), notice: "Employee was successfully updated." }
+        format.html { redirect_to employee_url(@employee), notice: "Funcionário atualizado" }
         format.json { render :show, status: :ok, location: @employee }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -70,10 +70,15 @@ class EmployeesController < ApplicationController
 
   # DELETE /employees/1 or /employees/1.json
   def destroy
+    messenger = Slack::Messenger.new "https://hooks.slack.com/services/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" do
+      defaults channel: "geral",
+               username: "messenger"
+    end
+    messenger.ping "Funcionário excluído: Nome: "+ @employee.emp_name+" Cargo: "+@employee.emp_job
     @employee.destroy
 
     respond_to do |format|
-      format.html { redirect_to employees_url, notice: "Employee was successfully destroyed." }
+      format.html { redirect_to employees_url, notice: "Funcionário deletado" }
       format.json { head :no_content }
     end
   end
