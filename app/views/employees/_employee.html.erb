@@ -1,22 +1,16 @@
-<div id="<%= dom_id employee %>">
-  <p>
-    <strong>Emp name:</strong>
-    <%= employee.emp_name %>
-  </p>
-
-  <p>
-    <strong>Emp email:</strong>
-    <%= employee.emp_email %>
-  </p>
-
-  <p>
-    <strong>Emp job:</strong>
-    <%= employee.emp_job %>
-  </p>
-
-  <p>
-    <strong>Emp salary:</strong>
-    <%= employee.emp_salary %>
-  </p>
+<div id="<%= dom_id employee %>" class="container">
+  <div class="jumbotron" style="background-color: #dddddd; padding:20px; weight: 50%">
+    <h1 class="display-4"><%= employee.emp_name %></h1>
+    <p class="display-6"><%= employee.emp_job %></p>
+    <hr class="my-4">
+    <p><%= employee.emp_salary %></p>
+    <p><%= employee.emp_email %></p>
+    
+    <div style="display: flex;">
+      <%= link_to "Editar Dados", edit_employee_path(@employee), class:"btn btn-dark", style:"margin-left:0; margin-right:20px " %> 
+      <%= button_to "Excluir Funcionário", @employee, method: :delete, class:"btn btn-danger",style:"margin-right: 0 " %>
+      
+    </div>
+  </div>
 
 </div>

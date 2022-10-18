@@ -1,0 +1,11 @@
+<div class="container">
+<%= search_form_for @q do |f| %>
+
+  
+  <label class="form-label", style="display: block; font-weight:bold;">Buscar Funcionário</label>
+  <%= f.search_field :emp_name_cont, class:"form-control", placeholder:"Nome do funcionário", style:"width:80%; display: inline" %>
+
+  <%= f.submit  class:"btn btn-dark", style:"width:19%; height: 40px;"%>
+<% end %>
+
+</div>
