@@ -7,6 +7,8 @@ gem 'ransack'
 
 gem 'slack-notifier', '~> 2.4'
 
+gem 'slack-messenger'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
