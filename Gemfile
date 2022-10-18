@@ -74,11 +74,11 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem "sqlite3", "~> 1.4"
+  gem 'pg', '~> 1.4'
 end
 
 group :development do
-  gem 'pg', '~> 1.4'
+  gem "sqlite3", "~> 1.4"
 end
 
 group :test do
