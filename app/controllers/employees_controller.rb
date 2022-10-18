@@ -33,7 +33,7 @@ class EmployeesController < ApplicationController
 
         notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
           defaults channel: "geral",
-                   username: "Employer App"
+                   username: "Employee Bot"
         end
         
         notifier.ping "Teste"
