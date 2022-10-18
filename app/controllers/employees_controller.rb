@@ -32,7 +32,7 @@ class EmployeesController < ApplicationController
         format.html { redirect_to employee_url(@employee), notice: "Employee was successfully created." }
         format.json { render :show, status: :created, location: @employee }
 
-        notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
+        notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
           defaults channel: "geral",
                    username: "Employee Bot"
         end
